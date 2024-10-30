@@ -7,7 +7,7 @@ Huffman coding is a lossless data compression algorithm. The idea is to assign v
 1. react-file-icon:  ```npm install react-file-icon```
 2. react-dropzone:   ```npm install react-dropzone```
 3. lucide-react:     ```npm install lucide-react```
-4. shadcn library: Download the library ```https://ui.shadcn.com/docs/installation```
+4. shadcn library: Download the library from -> ```https://ui.shadcn.com/docs/installation```
 5. axios:            ```npm install axios```
 6. fastapi:          ```pip install fastapi```
 

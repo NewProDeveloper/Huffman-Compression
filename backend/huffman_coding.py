@@ -131,29 +131,29 @@ class HuffmanCode:
         print("Compressed Successfully")
         return output_path
     
-    def decompression(self, path):
-        filename, file_extension = os.path.splitext(path)
-        output_path = filename + "_decompressed" + ".txt"
+    # def decompression(self, path):
+    #     filename, file_extension = os.path.splitext(path)
+    #     output_path = filename + "_decompressed" + ".txt"
 
-        with open(path, 'rb') as file, open(output_path, 'w') as output:
-            bit_string = ""
-            byte = file.read(1)
-            while byte:
-                byte = ord(byte)
-                bits = bin(byte)[2:].rjust(8, '0')
-                bit_string += bits
-                byte = file.read(1)
+    #     with open(path, 'rb') as file, open(output_path, 'w') as output:
+    #         bit_string = ""
+    #         byte = file.read(1)
+    #         while byte:
+    #             byte = ord(byte)
+    #             bits = bin(byte)[2:].rjust(8, '0')
+    #             bit_string += bits
+    #             byte = file.read(1)
             
-            bit_string = self.__remove_padding(bit_string)
+    #         bit_string = self.__remove_padding(bit_string)
 
-            decoded_text = self.__decoded_text(bit_string)
+    #         decoded_text = self.__decoded_text(bit_string)
             
-            output.write(decoded_text)
+    #         output.write(decoded_text)
         
-        return output_path
+    #     return output_path
 
 # path = input("Enter the path of the file: ")
 # h = HuffmanCode(path)
 # compressed_file = h.compression()
-# print(type(compressed_file))
-# h.decompression()
+# print(compressed_file)
+# h.decompression(compressed_file)

@@ -39,13 +39,6 @@ const FileCompressionApp = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      // const config = {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      //   responseType: "json",
-      // };
-
       console.log(`Sending request to /compress`);
 
       const response = await api.post("/compress", formData);
@@ -59,7 +52,6 @@ const FileCompressionApp = () => {
       });
       setProcessedFile(processedData);
 
-      // Update stats using the sizes from backend
       const originalSize = response.data.original_size;
       const processedSize = response.data.compressed_size;
       setStats({

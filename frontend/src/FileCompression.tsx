@@ -77,7 +77,10 @@ const FileCompressionApp = () => {
 
   const downloadFile = useCallback(
     (blob: Blob) => {
-      if (!processedFile || !file) return;
+      if (!processedFile || !file) {
+      console.error("Processed file or file is not defined");
+      return;
+    }
 
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -88,7 +91,7 @@ const FileCompressionApp = () => {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     },
-    [file]
+    [file, processedFile]
   );
 
   return (
